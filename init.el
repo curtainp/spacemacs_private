@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
                       auto-completion-private-snippets-directory "~/.spacemacs.d/snippets/"
                       :disabled-for org markdown)
      ;;better-defaults
+     spacemacs-modeline
      emoji
      emacs-lisp
      (ivy :variables ivy-enable-advanced-buffer-information nil)
@@ -73,7 +74,6 @@ This function should only modify configuration layer settings."
                       syntax-checking-enable-by-default nil
                       syntax-checking-enable-tooltips nil)
      )
-
 
    ;; List of additional packages that will be installed without being wrapped
    ;; in a layer (generally the packages are installed only and should still be
@@ -268,10 +268,11 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Monaco"
-                               :size 15
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 18
                                :weight normal
-                               :width normal)
+                               :width normal
+                               :powerline-scale 1.1)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -618,26 +619,3 @@ before packages are loaded."
   )
 
 
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("27a1dd6378f3782a593cc83e108a35c2b93e5ecc3bd9057313e1d88462701fcd" default))
- '(evil-want-Y-yank-to-eol nil)
- '(package-selected-packages
-   '(lsp-ui lsp-python-ms lsp-pyright lsp-origami lsp-ivy emoji-cheat-sheet-plus dap-mode lsp-treemacs bui ccls xterm-color wgrep vterm unfill terminal-here smex shell-pop rainbow-mode rainbow-identifiers mwim multi-term modus-vivendi-theme modus-operandi-theme origami ivy-yasnippet ivy-xref ivy-rtags ivy-hydra ivy-avy google-c-style flyspell-correct-ivy flyspell-correct flycheck-ycmd flycheck-rtags flycheck-pos-tip pos-tip flx eshell-z eshell-prompt-extras esh-help emojify helm helm-core treemacs cfrs pfuture ace-window avy posframe cpp-auto-include counsel swiper ivy company-ycmd ycmd request-deferred request company-rtags rtags company-emoji company-c-headers color-identifiers-mode lsp-mode spinner ht dash-functional yasnippet-snippets yapfify which-key use-package toc-org sphinx-doc smeargle pytest pyenv-mode py-isort poetry pippel pipenv pip-requirements pcre2el overseer orgit org-superstar org-rich-yank org-present org-pomodoro org-mime org-download org-cliplink org-brain nameless magit-svn magit-section magit-gitflow macrostep live-py-mode importmagic hydra hybrid-mode htmlize gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy forge flycheck-package flycheck-elsa evil-org evil-magit emr elisp-slime-nav dotenv-mode diminish cython-mode company-statistics company-anaconda blacken bind-map auto-yasnippet auto-compile ac-ispell))
- '(pdf-view-midnight-colors '("#b2b2b2" . "#292b2e")))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-)
